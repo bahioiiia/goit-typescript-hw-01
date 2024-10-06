@@ -1,16 +1,18 @@
-/* У вас є такі функції JavaScript:
-Як ви вкажете типи для аргументів і значень цих функцій, що повертаються? */
+/* Типізуйте функцію isWeekend яка приймає день тижня з enumDayOfWeek і повертає boolean значення, що вказує, чи це день робочий чи вихідний. */
 
-function showMessage(message) {
-  console.log(message);
+enum DayOfWeek {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
 }
 
-function calc(num1, num2) {
-  return num1 + num2;
+function isWeekend(day: DayOfWeek): boolean {
+  return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
 }
 
-function customError() {
-  throw new Error('Error');
-}
-
-
+console.log(isWeekend(DayOfWeek.Monday));
+console.log(isWeekend(DayOfWeek.Saturday));

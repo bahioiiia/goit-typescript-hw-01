@@ -22,3 +22,59 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+function add(num1: number, num2: number) {
+  return num1 + num2;
+}
+console.log(add(1, 2));
+/* HW */
+/*----------------1------------------- */
+const age: number = 50;
+const username: string = 'Max';
+const toggle: boolean = true;
+const empty: null = null;
+const callback = (a: number) => { return 100 + a };
+console.log(callback(age));
+/*----------------2------------------- */
+let person: [string, number];
+person = [username, age];
+console.log(person);
+/*----------------3------------------- */
+let value: string | number;
+value = "Hello";
+console.log(value);
+value = 42;
+console.log(value);
+/*----------------4------------------- */
+function showMessage(message: string): void {
+  console.log(message);
+}
+showMessage(username);
+
+function calc(num1: number, num2: number): number {
+  return num1 + num2;
+}
+console.log(calc(age, 2));
+
+function customError(): never {
+  throw new Error('Error');
+}
+//customError();
+/*----------------5------------------- */
+enum DayOfWeek {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+}
+function isWeekend(day: DayOfWeek): boolean {
+  return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
+}
+
+console.log(isWeekend(DayOfWeek.Monday));
+console.log(isWeekend(DayOfWeek.Saturday));
+
+/*----------------6------------------- */
