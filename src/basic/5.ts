@@ -14,5 +14,5 @@ function isWeekend(day: DayOfWeek): boolean {
   return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
 }
 
-console.log(isWeekend(DayOfWeek.Monday));
-console.log(isWeekend(DayOfWeek.Saturday));
+console.log(DayOfWeek[DayOfWeek.Monday], isWeekend(DayOfWeek.Monday));
+console.log(DayOfWeek[DayOfWeek.Saturday], isWeekend(DayOfWeek.Saturday));

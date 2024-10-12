@@ -73,8 +73,45 @@ enum DayOfWeek {
 function isWeekend(day: DayOfWeek): boolean {
   return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
 }
-
-console.log(isWeekend(DayOfWeek.Monday));
-console.log(isWeekend(DayOfWeek.Saturday));
-
+console.log(DayOfWeek[DayOfWeek.Monday], isWeekend(DayOfWeek.Monday));
+console.log(DayOfWeek[DayOfWeek.Saturday], isWeekend(DayOfWeek.Saturday));
 /*----------------6------------------- */
+
+/*----------------7------------------- */
+// Визначення типу функції, який приймає два числа та повертає число
+type CallbackType = (num1: number, num2: number) => number;
+
+// Функція, яка приймає два числа та функцію зворотного виклику, застосовує цю функцію до чисел та виводить результат
+function calc1(param1: number, param2: number, callback: CallbackType): void {
+  console.log('Result:', callback(param1, param2));
+}
+
+// Приклади використання calc з різними функціями зворотного виклику
+calc1(1, 1, (num1, num2) => num1 + num2);
+calc1(5, 10, (num1, num2) => num1 - num2);
+
+/*----------------2.4------------------- */
+type User = {
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+}
+
+function createOrUpdateUser(initialValues: User) {
+  // Оновлення користувача
+      const defaultUser: Userx = {
+        name: '',
+        surname: '',
+        email: '',
+        password: '',
+    };
+    return { ...defaultUser, ...initialValues };
+}
+
+const newUser = createOrUpdateUser({ 
+  email: 'user@mail.com', 
+  password: 'password123' 
+});
+
+console.log(newUser);

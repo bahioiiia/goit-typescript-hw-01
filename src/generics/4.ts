@@ -15,9 +15,18 @@ type User = {
 
 function createOrUpdateUser(initialValues: User) {
   // Оновлення користувача
+      const defaultUser: Userx = {
+        name: '',
+        surname: '',
+        email: '',
+        password: '',
+    };
+    return { ...defaultUser, ...initialValues };
 }
 
-createOrUpdateUser({ 
+const newUser = createOrUpdateUser({ 
   email: 'user@mail.com', 
   password: 'password123' 
 });
+
+console.log(newUser);
